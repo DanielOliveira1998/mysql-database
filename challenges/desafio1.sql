@@ -4,7 +4,7 @@
 
 DROP DATABASE IF EXISTS SpotifyClone;
 CREATE DATABASE IF NOT EXISTS SpotifyClone;
-use SpotifyClone;
+-- use SpotifyClone;
 CREATE TABLE SpotifyClone.Artistas(
   Id INT PRIMARY KEY AUTO_INCREMENT,
   Nome VARCHAR(150) NOT NULL
