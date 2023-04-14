@@ -69,7 +69,7 @@ VALUES
 
 INSERT INTO SpotifyClone.Planos (Nome, Valor)
 VALUES
-	('gratuito', 0),
+	('gratuito', 0.00),
 	('familiar', 7.99),
 	('universitário', 5.99),
 	('pessoal', 6.99);
