@@ -3,8 +3,7 @@ SELECT
   COUNT(Historico.Data_De_Reproducao) AS musicas_ouvidas, 
   ROUND(SUM(Musicas.Duracao)/60,2) AS total_minutos 
 FROM
-  Pessoas_Usuarias
-  INNER JOIN 
+  Pessoas_Usuarias INNER JOIN 
   Historico ON Pessoas_Usuarias.Id = Historico.Pessoas_Usuarias_Id
   INNER JOIN 
   Musicas ON Musicas.id = Historico.Musicas_Id
