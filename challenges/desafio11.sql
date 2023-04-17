@@ -1,10 +1,11 @@
 SELECT
-  Albuns.Nome AS album,
-  COUNT(Musicas_Favoritas.Musicas_Id)
+  Albuns.Nome As album,
+  COUNT(Musicas_Favoritas.Musicas_Id) AS favoritadas
 FROM
-  Musicas_Favoritas INNER JOIN
-  Musicas ON Musicas_Favoritas.Musicas_Id = Musicas.Id
-  INNER JOIN
-  Artistas ON Albuns.Id = Albuns.Id
-  GROUP BY Albuns.Nome
+  Albuns INNER JOIN
+  Musicas ON  Albuns.Id = Musicas.Albuns_Id
+  LEFT JOIN
+  Musicas_Favoritas ON Musicas.Id = Musicas_Favoritas.Musicas_Id
+  GROUP BY Albuns.Id
+  ORDER BY favoritadas DESC, Albuns.Nome
   LIMIT 3;
