@@ -12,7 +12,7 @@ FROM
   Musicas ON Musicas_Favoritas.Musicas_Id = Musicas.Id
   INNER JOIN
   Albuns ON Musicas.Albuns_Id = Albuns.Id
-  INNER JOIN 
+  RIGHT JOIN 
   Artistas ON Albuns.Artistas_Id = Artistas.Id
   GROUP BY Artistas.Id
-  ORDER BY ranking, Artistas.Nome;
+  ORDER BY COUNT(Musicas_Favoritas.Musicas_Id) DESC, Artistas.Nome;
